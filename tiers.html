@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tier System — Starter, Pro, Growth | Orbitra</title>
+<meta name="description" content="Detail the three tiers as system capacities, helping visitors self-select before the audit.">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.tier-hero{padding-top:160px;padding-bottom:60px;position:relative;overflow:hidden}
+.tier-hero h1{max-width:14ch}
+.tier-hero .lead{max-width:60ch;margin-top:24px}
+.tier-spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:980px){.tier-spec-grid{grid-template-columns:1fr}}
+.tier-spec{display:flex;flex-direction:column;height:100%;position:relative;padding:40px;border-radius:16px;background:var(--surface);border:1px solid var(--border);transition:all 400ms var(--ease-out-cubic);overflow:hidden}
+.tier-spec::after{content:'';position:absolute;inset:0;border-radius:16px;padding:1px;background:linear-gradient(135deg,rgba(0,212,255,0) 0%,rgba(0,212,255,0) 100%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;transition:background 400ms ease}
+.tier-spec:hover{transform:translateY(-6px);box-shadow:0 0 60px rgba(0,212,255,0.10)}
+.tier-spec:hover::after{background:linear-gradient(135deg,rgba(0,212,255,0.5) 0%,rgba(183,148,244,0.5) 100%)}
+.tier-spec[data-tier="pro"]::after{background:linear-gradient(135deg,rgba(0,212,255,0.35) 0%,rgba(183,148,244,0.35) 100%)}
+.tier-spec .tier-tag{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+.tier-spec .tier-tag .name{font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:0.2em;color:var(--primary)}
+.tier-spec .tier-tag .index{font-family:var(--font-mono);font-size:12px;color:var(--muted)}
+.tier-spec h3{font-size:1.75rem;margin-bottom:12px}
+.tier-spec .summary{color:var(--muted);margin-bottom:28px;font-size:15px;min-height:72px}
+.tier-spec .capacity-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:28px;flex-grow:1}
+.tier-spec .capacity-list li{display:grid;grid-template-columns:18px 1fr;gap:12px;font-size:14px;color:var(--text)}
+.tier-spec .capacity-list li svg{width:16px;height:16px;margin-top:4px;color:var(--primary);flex-shrink:0}
+.tier-spec .meta{display:flex;flex-direction:column;gap:10px;padding-top:24px;border-top:1px solid var(--border);font-size:13px;margin-bottom:24px}
+.tier-spec .meta .row{display:flex;justify-content:space-between;gap:12px}
+.tier-spec .meta .row span:first-child{color:var(--muted);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.1em;font-size:11px}
+.tier-spec .meta .row span:last-child{color:var(--text-strong);font-weight:500}
+.tier-spec .badge{position:absolute;top:20px;right:20px;font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:0.15em;padding:4px 10px;border-radius:999px;background:rgba(0,212,255,0.12);color:var(--primary);border:1px solid rgba(0,212,255,0.3)}
+
+.compare-table{width:100%;border-collapse:separate;border-spacing:0;background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.compare-table th,.compare-table td{padding:18px 20px;text-align:left;font-size:14px;border-bottom:1px solid var(--border);vertical-align:middle}
+.compare-table thead th{background:rgba(255,255,255,0.02);font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--muted);font-weight:500}
+.compare-table thead th:first-child{color:var(--muted)}
+.compare-table thead th.col-highlight{color:var(--primary)}
+.compare-table tbody tr:last-child td{border-bottom:none}
+.compare-table tbody tr:hover{background:rgba(255,255,255,0.02)}
+.compare-table td:first-child{color:var(--muted);font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:0.12em}
+.compare-table td.val{color:var(--text-strong);font-weight:500}
+.compare-table td.col-highlight{background:rgba(0,212,255,0.03)}
+.compare-wrap{overflow-x:auto;border-radius:16px}
+@media(max-width:760px){.compare-table th,.compare-table td{padding:14px 12px;font-size:13px}}
+
+.diagram-svg{width:100%;max-width:560px;height:auto;margin:0 auto;display:block}
+.diagram-svg .ring{transform-origin:center;animation:slowSpin 40s linear infinite}
+.diagram-svg .ring-2{animation-duration:60s;animation-direction:reverse}
+@keyframes slowSpin{to{transform:rotate(360deg)}}
+.diagram-wrap{position:relative;padding:40px;border-radius:16px;background:rgba(20,20,27,0.5);border:1px solid var(--border);backdrop-filter:blur(20px)}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+@media(max-width:880px){.split{grid-template-columns:1fr;gap:40px}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-inner">
+    <a href="/" class="nav-logo"><span class="dot"></span> Orbitra</a>
+    <nav class="nav-menu" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/tiers.html">Tier System</a>
+      <a href="/process.html">Process</a>
+      <a href="/about.html">About</a>
+      <a href="/faq.html">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="https://calendly.com/edarling85/" target="_blank" rel="noopener noreferrer">Start Audit <span class="arrow">→</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero tier-hero">
+    <div class="mesh-bg"></div>
+    <div class="hero-cursor-glow"></div>
+    <div class="container">
+      <div class="hero-content reveal">
+        <span class="eyebrow">Tier System / 01 — 03</span>
+        <h1 class="mt-sm"><span class="word">Three</span> <span class="word">defined</span> <span class="word">capacities.</span><br><span class="word text-gradient">Zero</span> <span class="word text-gradient">scope</span> <span class="word text-gradient">drift.</span></h1>
+        <p class="lead">Each tier is a system capacity, not a feature list. Starter, Pro, and Growth describe what your website infrastructure can hold — and what it is governed to deliver.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://calendly.com/edarling85/" target="_blank" rel="noopener noreferrer">Start the Tier Fit Audit <span class="arrow">→</span></a>
+          <a class="btn btn-secondary" href="#compare">Compare tiers</a>
+        </div>
+      </div>
+
+      <div class="stats-row reveal-stagger">
+        <div class="stat"><div class="num" data-count="3">0</div><div class="label">Defined tiers</div></div>
+        <div class="stat"><div class="num" data-count="4">0</div><div class="label">Service categories</div></div>
+        <div class="stat"><div class="num" data-count="5">0</div><div class="label">Process steps</div></div>
+        <div class="stat"><div class="num" data-count="0" data-suffix="%">0</div><div class="label">Scope creep</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Specification</span>
+        <h2 class="mt-sm">Each tier, fully defined.</h2>
+        <p class="lead">Capacity, suitability, and structure — declared before the work begins. No estimates that move. No deliverables that drift.</p>
+      </div>
+
+      <div class="tier-spec-grid reveal-stagger">
+
+        <article class="tier-spec" data-tier="starter">
+          <div class="tier-tag"><span class="name">Starter</span><span class="index">T—01</span></div>
+          <h3>Foundational structure</h3>
+          <p class="summary">For businesses establishing a first structured digital presence. One service, one flow, one source of truth.</p>
+          <ul class="capacity-list">
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l3 3 7-7"/></svg> Compact site architecture</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l3 3 7-7"/></svg> Primary service definition</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l3 3 7-7"/></svg> Contact and qualification flow</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l3 3 7-7"/></svg> Brand foundation layer</li>
+          </ul>
+          <div class="meta">
+            <div class="row"><span>Capacity</span><span>Compact</span></div>
+            <div class="row"><span>Service lines</span><span>1</span></div>
+            <div class="row"><span>Ecommerce</span><span>—</span></div>
+          </div>
+          <a class="btn btn-secondary" href="https://calendly.com/edarling85/" target="_blank" rel="noopener noreferrer">Audit for Starter <span class="arrow">→</span></a>
+        </article>
+
+        <article class="tier-spec" data-tier="pro">
+          <span class="badge">Most common</span>
+          <div class="tier-tag"><span class="name">Pro</span><span class="index">T—02</span></div>
+          <h3>Expanded structure</h3>
+          <p class="summary">For businesses with multiple service lines and active client acquisition. Structured to scale content without breaking hierarchy.</p>
+          <ul class="capacity-list">
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l3 3 7-7"/></svg> Service page system</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l3 3 7-7"/></svg> Content hierarchy framework</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l3 3 7-7"/></svg> Basic brand application</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l3 3 7-7"/></svg> Social structure templates</li>
+          </ul>
+          <div class="meta">
+            <div class="row"><span>Capacity</span><span>Expanded</span></div>
+            <div class="row"><span>Service lines</span><span>Multiple</span></div>
+            <div class="row"><span>Ecommerce</span><span>—</span></div>
+          </div>
+          <a class="btn btn-primary" href="https://calendly.com/edarling85/" target="_blank" rel="noopener noreferrer">Audit for Pro <span class="arrow">→</span></a>
+        </article>
+
+        <article class="tier-spec" data-tier="growth">
+          <div class="tier-tag"><span class="name">Growth</span><span class="index">T—03</span></div>
+          <h3>Full infrastructure</h3>
+          <p class="summary">For businesses scaling operations or adding transactional functions. Built to hold ecommerce, multi-section depth, and integrated brand application.</p>
+          <ul class="capacity-list">
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l3 3 7-7"/></svg> Ecommerce or advanced functions</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l3 3 7-7"/></svg> Multi-section architecture</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l3 3 7-7"/></svg> Integrated brand application</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l3 3 7-7"/></svg> Operational scale-ready</li>
+          </ul>
+          <div class="meta">
+            <div class="row"><span>Capacity</span><span>Full</span></div>
+            <div class="row"><span>Service lines</span><span>Multi-section</span></div>
+            <div class="row"><span>Ecommerce</span><span>Included</span></div>
+          </div>
+          <a class="btn btn-secondary" href="https://calendly.com/edarling85/" target="_blank" rel="noopener noreferrer">Audit for Growth <span class="arrow">→</span></a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-sm">
+    <div class="container">
+      <div class="split">
+        <div class="reveal">
+          <span class="eyebrow">Tier Logic</span>
+          <h2 class="mt-sm">A tier is a <em style="color:var(--primary);font-style:italic">capacity</em>, not a checklist.</h2>
+          <p class="lead mt-sm">Most providers price by hours or features. Orbitra prices by structural capacity. The tier you select defines how much your site is built to hold — content, services, functions — and how it is governed.</p>
+          <p class="mt-md text-muted">This means scope is declared before delivery. Timelines are fixed. Outputs are predictable. Tier movement is explicit, not negotiated.</p>
+        </div>
+        <div class="diagram-wrap reveal">
+          <svg class="diagram-svg" viewBox="0 0 400 400" aria-hidden="true">
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#00D4FF" stop-opacity="0.8"/>
+                <stop offset="100%" stop-color="#B794F4" stop-opacity="0.4"/>
+              </linearGradient>
+              <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#00D4FF" stop-opacity="0.6"/>
+                <stop offset="100%" stop-color="#0099FF" stop-opacity="0.2"/>
+              </linearGradient>
+              <radialGradient id="core" cx="0.5" cy="0.5" r="0.5">
+                <stop offset="0%" stop-color="#00D4FF" stop-opacity="1"/>
+                <stop offset="100%" stop-color="#00D4FF" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <circle cx="200" cy="200" r="60" fill="url(#core)"/>
+            <circle cx="200" cy="200" r="24" fill="#00D4FF" opacity="0.9"/>
+            <g class="ring"><circle cx="200" cy="200" r="90" fill="none" stroke="url(#g1)" stroke-width="1" stroke-dasharray="6 8"/></g>
+            <g class="ring ring-2"><circle cx="200" cy="200" r="140" fill="none" stroke="url(#g2)" stroke-width="1" stroke-dasharray="2 12"/></g>
+            <g class="ring"><circle cx="200" cy="200" r="185" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/></g>
+            <text x="200" y="108" text-anchor="middle" fill="#8A8A99" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2">STARTER</text>
+            <text x="200" y="58" text-anchor="middle" fill="#8A8A99" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2">PRO</text>
+            <text x="200" y="14" text-anchor="middle" fill="#8A8A99" font-family="Geist Mono, monospace" font-size="10" letter-spacing="2">GROWTH</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="compare">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Comparison</span>
+        <h2 class="mt-sm">Side-by-side capacity.</h2>
+        <p class="lead">A direct read across the three tiers. Structure, not features.</p>
+      </div>
+
+      <div class="compare-wrap reveal">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Specification</th>
+              <th>Starter</th>
+              <th class="col-highlight">Pro</th>
+              <th>Growth</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>System capacity</td>
+              <td class="val">Foundational</td>
+              <td class="val col-highlight">Expanded</td>
+              <td class="val">Full</td>
+            </tr>
+            <tr>
+              <td>Site architecture</td>
+              <td class="val">Compact</td>
+              <td class="val col-highlight">Multi-page</td>
+              <td class="val">Multi-section</td>
+            </tr>
+            <tr>
+              <td>Service lines</td>
+              <td class="val">Single</td>
+              <td class="val col-highlight">Multiple</td>
+              <td class="val">Multiple + product</td>
+            </tr>
+            <tr>
+              <td>Content hierarchy</td>
+              <td class="val">Primary</td>
+              <td class="val col-highlight">Structured system</td>
+              <td class="val">Integrated framework</td>
+            </tr>
+            <tr>
+              <td>Brand foundation</td>
+              <td class="val">Included</td>
+              <td class="val col-highlight">Included</td>
+              <td class="val">Included</td>
+            </tr>
+            <tr>
+              <td>Brand application</td>
+              <td class="val">—</td>
+              <td class="val col-highlight">Basic</td>
+              <td class="val">Integrated</td>
+            </tr>
+            <tr>
+              <td>Ecommerce layer</td>
+              <td class="val">—</td>
+              <td class="val col-highlight">—</td>
+              <td class="val">Included</td>
+            </tr>
+            <tr>
+              <td>Suited for</td>
+              <td class="val">First digital presence</td>
+              <td class="val col-highlight">Active acquisition</td>
+              <td class="val">Scaling operations</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-panel reveal">
+        <div class="mesh-bg"></div>
+        <div style="position:relative;z-index:2">
+          <span class="eyebrow">Next step</span>
+          <h2 class="mt-sm">Find the tier that fits.</h2>
+          <p class="lead mx-auto" style="max-width:52ch">The Tier Fit Audit is a free, structured intake. It returns a tier recommendation and a fixed scope document — not a sales call.</p>
+          <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:32px">
+            <a class="btn btn-primary" href="https://calendly.com/edarling85/" target="_blank" rel="noopener noreferrer">Start the Tier Fit Audit <span class="arrow">→</span></a>
+            <a class="btn btn-secondary" href="/process.html">See the process</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <a href="/" class="nav-logo"><span class="dot"></span> Orbitra</a>
+        <p>Structured website systems for service businesses. Scope governance, not custom projects.</p>
+      </div>
+      <div class="footer-col">
+        <h5>System</h5>
+        <ul>
+          <li><a href="/tiers.html">Tier System</a></li>
+          <li><a href="/process.html">Process</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Studio</h5>
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/">Home</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Engage</h5>
+        <ul>
+          <li><a href="https://calendly.com/edarling85/" target="_blank" rel="noopener noreferrer">Start Audit</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© Orbitra. All rights reserved.</span>
+      <span>orbitra.mu</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/main.js" defer></script>
+</body>
+</html>
