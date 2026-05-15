@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Orbitra</title>
+<meta name="description" content="Position Orbitra against custom agencies and DIY builders; communicate the productized model and discipline.">
+<link rel="stylesheet" href="/styles.css">
+<style>
+  .about-hero{padding-top:160px;padding-bottom:80px;position:relative;overflow:hidden}
+  .about-hero h1{max-width:14ch}
+  .compare-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;background:var(--surface)}
+  .compare-col{padding:36px 32px;border-right:1px solid var(--border);position:relative;transition:background var(--duration-base) ease}
+  .compare-col:last-child{border-right:none}
+  .compare-col.is-orbitra{background:linear-gradient(180deg, rgba(0,212,255,0.06), rgba(0,212,255,0));}
+  .compare-col:hover{background:rgba(255,255,255,0.02)}
+  .compare-col.is-orbitra:hover{background:linear-gradient(180deg, rgba(0,212,255,0.10), rgba(0,212,255,0.02))}
+  .compare-col h4{margin-bottom:6px;font-size:1.15rem}
+  .compare-col .tag{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--muted);margin-bottom:18px;display:block}
+  .compare-col.is-orbitra .tag{color:var(--primary)}
+  .compare-list{list-style:none;margin-top:20px;display:flex;flex-direction:column;gap:14px}
+  .compare-list li{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--text);line-height:1.55}
+  .compare-list li svg{flex-shrink:0;margin-top:3px}
+  @media (max-width:880px){.compare-grid{grid-template-columns:1fr}.compare-col{border-right:none;border-bottom:1px solid var(--border)}.compare-col:last-child{border-bottom:none}}
+  .is-isnt{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  @media (max-width:720px){.is-isnt{grid-template-columns:1fr}}
+  .is-panel,.isnt-panel{padding:36px;border-radius:var(--radius-lg);border:1px solid var(--border);background:var(--surface);position:relative;overflow:hidden}
+  .is-panel{background:linear-gradient(160deg, rgba(0,212,255,0.05), transparent 60%)}
+  .isnt-panel{background:linear-gradient(160deg, rgba(183,148,244,0.04), transparent 60%)}
+  .panel-label{font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:0.18em;margin-bottom:20px;display:inline-flex;align-items:center;gap:10px}
+  .is-panel .panel-label{color:var(--primary)}
+  .isnt-panel .panel-label{color:var(--accent)}
+  .panel-label::before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 12px currentColor}
+  .panel-list{list-style:none;display:flex;flex-direction:column;gap:14px}
+  .panel-list li{font-size:15px;color:var(--text);padding-left:20px;position:relative;line-height:1.5}
+  .panel-list li::before{content:'';position:absolute;left:0;top:10px;width:8px;height:1px;background:currentColor;opacity:0.4}
+  .is-panel .panel-list li::before{background:var(--primary);opacity:0.7}
+  .principles{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
+  @media (max-width:880px){.principles{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:520px){.principles{grid-template-columns:1fr}}
+  .principle{background:var(--bg);padding:36px 32px;transition:background var(--duration-base) ease;position:relative}
+  .principle:hover{background:var(--surface)}
+  .principle .num{font-family:var(--font-mono);font-size:11px;letter-spacing:0.18em;color:var(--primary);margin-bottom:20px;display:block}
+  .principle h4{margin-bottom:10px;font-size:1.15rem}
+  .principle p{color:var(--muted);font-size:14.5px;line-height:1.55}
+  .signature-block{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center}
+  @media (max-width:880px){.signature-block{grid-template-columns:1fr;gap:40px}}
+  .signature-visual{position:relative;aspect-ratio:1;max-width:440px;width:100%;margin:0 auto}
+  .signature-visual svg{width:100%;height:100%}
+  .ring{transform-origin:center;animation:spin 40s linear infinite}
+  .ring.r2{animation-duration:60s;animation-direction:reverse}
+  .ring.r3{animation-duration:80s}
+  @keyframes spin{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-inner">
+    <a href="/" class="nav-logo"><span class="dot"></span>Orbitra</a>
+    <nav class="nav-menu">
+      <a href="/">Home</a>
+      <a href="/tiers.html">Tier System</a>
+      <a href="/process.html">Process</a>
+      <a href="/about.html">About</a>
+      <a href="/faq.html">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="https://calendly.com/edarling85/" target="_blank" rel="noopener noreferrer">Start Audit <span class="arrow">→</span></a>
+      <button class="nav-toggle" aria-label="Menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero about-hero">
+    <div class="mesh-bg"></div>
+    <div class="hero-cursor-glow"></div>
+    <div class="container hero-content">
+      <span class="eyebrow reveal">About Orbitra</span>
+      <h1 class="mt-sm">
+        <span class="word">A</span> <span class="word">website</span> <span class="word">company</span> <span class="word">built</span> <span class="word">on</span> <span class="word text-gradient">scope</span> <span class="word text-gradient">governance.</span>
+      </h1>
+      <p class="lead reveal" style="margin-top:24px;max-width:60ch">Orbitra is a productized website and brand infrastructure provider. We sell structure — defined tiers, fixed scopes, predictable delivery. Not hours. Not aesthetics.</p>
+      <div class="hero-actions reveal">
+        <a class="btn btn-primary" href="https://calendly.com/edarling85/" target="_blank" rel="noopener noreferrer">Start the Tier Fit Audit <span class="arrow">→</span></a>
+        <a class="btn btn-secondary" href="/tiers.html">See the Tier System</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Positioning</span>
+        <h2 class="mt-sm">Between the agency and the template.</h2>
+        <p class="lead">The market offers two options. Custom agencies — high cost, undefined scope. DIY builders — no structure, no system. Orbitra sits between them.</p>
+      </div>
+      <div class="compare-grid reveal">
+        <div class="compare-col">
+          <span class="tag">Option A</span>
+          <h4>Custom Agencies</h4>
+          <ul class="compare-list">
+            <li><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 3l8 8M11 3l-8 8" stroke="#8A8A99" stroke-width="1.5" stroke-linecap="round"/></svg>Open-ended scope</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 3l8 8M11 3l-8 8" stroke="#8A8A99" stroke-width="1.5" stroke-linecap="round"/></svg>Negotiated pricing</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 3l8 8M11 3l-8 8" stroke="#8A8A99" stroke-width="1.5" stroke-linecap="round"/></svg>Unpredictable timeline</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 3l8 8M11 3l-8 8" stroke="#8A8A99" stroke-width="1.5" stroke-linecap="round"/></svg>Outcome tied to billable hours</li>
+          </ul>
+        </div>
+        <div class="compare-col is-orbitra">
+          <span class="tag">Orbitra</span>
+          <h4>Structured Tier System</h4>
+          <ul class="compare-list">
+            <li><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 7l3 3 5-6" stroke="#00D4FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Fixed, governed scope</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 7l3 3 5-6" stroke="#00D4FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Tier-defined pricing</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 7l3 3 5-6" stroke="#00D4FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Predictable milestone delivery</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 7l3 3 5-6" stroke="#00D4FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Outcome tied to system capacity</li>
+          </ul>
+        </div>
+        <div class="compare-col">
+          <span class="tag">Option B</span>
+          <h4>DIY Builders</h4>
+          <ul class="compare-list">
+            <li><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 3l8 8M11 3l-8 8" stroke="#8A8A99" stroke-width="1.5" stroke-linecap="round"/></svg>No structural governance</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 3l8 8M11 3l-8 8" stroke="#8A8A99" stroke-width="1.5" stroke-linecap="round"/></svg>Owner-built fragility</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 3l8 8M11 3l-8 8" stroke="#8A8A99" stroke-width="1.5" stroke-linecap="round"/></svg>Template-bound architecture</li>
+            <li><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 3l8 8M11 3l-8 8" stroke="#8A8A99" stroke-width="1.5" stroke-linecap="round"/></svg>Outcome tied to owner time</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="stats-row reveal-stagger">
+        <div class="stat"><div class="num" data-count="3">0</div><div class="label">Defined Tiers</div></div>
+        <div class="stat"><div class="num" data-count="4">0</div><div class="label">Service Categories</div></div>
+        <div class="stat"><div class="num" data-count="5">0</div><div class="label">Delivery Steps</div></div>
+        <div class="stat"><div class="num" data-count="0" data-suffix="%">0</div><div class="label">Open-Ended Scope</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">What we are / are not</span>
+        <h2 class="mt-sm">Discipline is the product.</h2>
+        <p class="lead">We state what Orbitra is before what it does. The boundary is the value.</p>
+      </div>
+      <div class="is-isnt">
+        <div class="is-panel reveal">
+          <span class="panel-label">Orbitra is</span>
+          <ul class="panel-list">
+            <li>A productized website and brand infrastructure provider</li>
+            <li>A defined tier system — Starter, Pro, Growth</li>
+            <li>Scope governance and structural integrity</li>
+            <li>Fixed scopes, milestone-based delivery</li>
+            <li>Built for service businesses with defined offerings</li>
+          </ul>
+        </div>
+        <div class="isnt-panel reveal">
+          <span class="panel-label">Orbitra is not</span>
+          <ul class="panel-list">
+            <li>An agency selling billable hours</li>
+            <li>A freelance studio taking open creative briefs</li>
+            <li>A template marketplace</li>
+            <li>A vendor of bespoke or open-ended engagements</li>
+            <li>Built for personal brands or undefined startups</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="signature-block">
+        <div class="reveal">
+          <span class="eyebrow">Operating principles</span>
+          <h2 class="mt-sm">A system, not a service menu.</h2>
+          <p class="lead" style="margin-top:20px">Every engagement is governed by the same principles. They are the reason scope holds, timelines stay predictable, and outcomes remain controlled.</p>
+        </div>
+        <div class="signature-visual reveal">
+          <svg viewBox="0 0 400 400" fill="none">
+            <defs>
+              <linearGradient id="gA" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#00D4FF"/>
+                <stop offset="100%" stop-color="#B794F4"/>
+              </linearGradient>
+              <linearGradient id="gB" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#00D4FF" stop-opacity="0.6"/>
+                <stop offset="100%" stop-color="#0099FF" stop-opacity="0.1"/>
+              </linearGradient>
+              <radialGradient id="core" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#00D4FF" stop-opacity="0.6"/>
+                <stop offset="100%" stop-color="#00D4FF" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <circle cx="200" cy="200" r="80" fill="url(#core)"/>
+            <g class="ring r1">
+              <circle cx="200" cy="200" r="60" stroke="url(#gA)" stroke-width="1" fill="none"/>
+              <circle cx="260" cy="200" r="4" fill="#00D4FF"/>
+            </g>
+            <g class="ring r2">
+              <circle cx="200" cy="200" r="110" stroke="url(#gB)" stroke-width="1" fill="none" stroke-dasharray="4 8"/>
+              <circle cx="90" cy="200" r="3" fill="#B794F4"/>
+            </g>
+            <g class="ring r3">
+              <circle cx="200" cy="200" r="160" stroke="rgba(255,255,255,0.12)" stroke-width="1" fill="none"/>
+              <circle cx="360" cy="200" r="3" fill="#FFB347"/>
+              <circle cx="40" cy="200" r="2" fill="#00D4FF"/>
+            </g>
+            <circle cx="200" cy="200" r="190" stroke="rgba(255,255,255,0.06)" stroke-width="1" fill="none"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="principles reveal-stagger" style="margin-top:64px">
+        <div class="principle">
+          <span class="num">01</span>
+          <h4>Structure before aesthetics</h4>
+          <p>Architecture defines the build. Visual treatment serves the structure, not the other way around.</p>
+        </div>
+        <div class="principle">
+          <span class="num">02</span>
+          <h4>Tier capacity, not feature lists</h4>
+          <p>Each tier represents a level of system capacity. You select capacity, not a menu of components.</p>
+        </div>
+        <div class="principle">
+          <span class="num">03</span>
+          <h4>Scope is signed, not adjusted</h4>
+          <p>Scope documents are fixed before work begins. Out-of-scope requests are handled as defined add-ons.</p>
+        </div>
+        <div class="principle">
+          <span class="num">04</span>
+          <h4>Milestones, not hours</h4>
+          <p>Delivery is structured around defined milestones with fixed deliverables — never billable time.</p>
+        </div>
+        <div class="principle">
+          <span class="num">05</span>
+          <h4>Qualified intake only</h4>
+          <p>Every engagement begins with a Tier Fit Audit. If the fit is wrong, we say so before scope is written.</p>
+        </div>
+        <div class="principle">
+          <span class="num">06</span>
+          <h4>Predictable by design</h4>
+          <p>The same intake, the same scope format, the same delivery rhythm. Repeatability is the foundation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-panel reveal">
+        <div class="mesh-bg"></div>
+        <span class="eyebrow" style="position:relative;z-index:1">Begin with structure</span>
+        <h2 class="mt-sm" style="position:relative;z-index:1;max-width:20ch;margin-left:auto;margin-right:auto">Start with a Tier Fit Audit.</h2>
+        <p style="position:relative;z-index:1;max-width:52ch">A short, structured intake. We assess fit, recommend a tier, and return a fixed scope document. No negotiation. No open briefs.</p>
+        <div style="position:relative;z-index:1;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+          <a class="btn btn-primary" href="https://calendly.com/edarling85/" target="_blank" rel="noopener noreferrer">Start the Tier Fit Audit <span class="arrow">→</span></a>
+          <a class="btn btn-secondary" href="/tiers.html">See the Tier System</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <a href="/" class="nav-logo"><span class="dot"></span>Orbitra</a>
+        <p>Structured website systems for service businesses. Defined tiers. Fixed scope. Predictable delivery.</p>
+      </div>
+      <div class="footer-col">
+        <h5>System</h5>
+        <ul>
+          <li><a href="/tiers.html">Tier System</a></li>
+          <li><a href="/process.html">Process</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="https://calendly.com/edarling85/" target="_blank" rel="noopener noreferrer">Tier Fit Audit</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="https://calendly.com/edarling85/" target="_blank" rel="noopener noreferrer">Book intake</a></li>
+          <li><a href="https://orbitra.mu">orbitra.mu</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© Orbitra. Structured website systems.</span>
+      <span>Built on tiers, not hours.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/main.js" defer></script>
+</body>
+</html>
