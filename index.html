@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orbitra — Structured Website Systems</title>
+<meta name="description" content="Orbitra builds structured website systems through defined tiers — Starter, Pro, Growth. Scope governance, not custom projects.">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.hero-layout{display:grid;grid-template-columns:1.3fr 1fr;gap:64px;align-items:center;width:100%}
+@media(max-width:960px){.hero-layout{grid-template-columns:1fr;gap:48px}}
+.hero-visual{position:relative;height:420px}
+.hero-visual svg{position:absolute;inset:0;width:100%;height:100%}
+.orbit-ring{fill:none;stroke:rgba(255,255,255,0.08);stroke-width:1}
+.orbit-ring.accent{stroke:rgba(0,212,255,0.4);stroke-dasharray:4 6;animation:rotate 40s linear infinite}
+.orbit-ring.accent-2{stroke:rgba(183,148,244,0.3);stroke-dasharray:2 8;animation:rotate 60s linear infinite reverse}
+@keyframes rotate{from{transform:rotate(0deg);transform-origin:center}to{transform:rotate(360deg);transform-origin:center}}
+.orbit-node{fill:#00D4FF;filter:drop-shadow(0 0 8px rgba(0,212,255,0.6))}
+.orbit-node.violet{fill:#B794F4;filter:drop-shadow(0 0 8px rgba(183,148,244,0.5))}
+.orbit-node.amber{fill:#FFB347;filter:drop-shadow(0 0 8px rgba(255,179,71,0.5))}
+.orbit-core{fill:url(#coreGrad)}
+.tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:880px){.tier-grid{grid-template-columns:1fr}}
+.cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+@media(max-width:760px){.cat-grid{grid-template-columns:1fr}}
+.cat-list{list-style:none;display:flex;flex-direction:column;gap:18px}
+.cat-list li{display:grid;grid-template-columns:36px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--border)}
+.cat-list .mark{font-family:var(--font-mono);font-size:12px;color:var(--primary);letter-spacing:0.1em;padding-top:2px}
+.cat-list.excluded .mark{color:var(--muted)}
+.cat-list .label-name{color:var(--text-strong);font-weight:500;display:block;margin-bottom:4px}
+.cat-list .label-desc{color:var(--muted);font-size:14px}
+.cat-list.excluded .label-name{color:var(--muted);text-decoration:line-through;text-decoration-color:rgba(255,255,255,0.2)}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-inner">
+    <a href="/" class="nav-logo"><span class="dot"></span>Orbitra</a>
+    <nav class="nav-menu">
+      <a href="/tiers.html">Tier System</a>
+      <a href="/process.html">Process</a>
+      <a href="/about.html">About</a>
+      <a href="/faq.html">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="https://calendly.com/edarling85/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start Audit <span class="arrow">→</span></a>
+      <button class="nav-toggle" aria-label="Menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="mesh-bg"></div>
+    <div class="hero-cursor-glow"></div>
+    <div class="container">
+      <div class="hero-layout">
+        <div class="hero-content">
+          <span class="eyebrow">Structured Website Systems</span>
+          <h1>
+            <span class="word">Websites</span> <span class="word">built</span> <span class="word">as</span> <span class="word">systems,</span><br>
+            <span class="word text-gradient">not</span> <span class="word text-gradient">projects.</span>
+          </h1>
+          <p class="lead">Orbitra delivers website infrastructure through defined tiers. Fixed scope. Governed delivery. Predictable outcomes for service businesses.</p>
+          <div class="hero-actions">
+            <a href="https://calendly.com/edarling85/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start the Tier Fit Audit <span class="arrow">→</span></a>
+            <a href="/tiers.html" class="btn btn-secondary">See the Tier System</a>
+          </div>
+          <div class="stats-row">
+            <div class="stat"><div class="num"><span data-count="3">0</span></div><div class="label">Defined Tiers</div></div>
+            <div class="stat"><div class="num"><span data-count="5">0</span></div><div class="label">Step Process</div></div>
+            <div class="stat"><div class="num"><span data-count="100" data-suffix="%">0</span></div><div class="label">Fixed Scope</div></div>
+          </div>
+        </div>
+        <div class="hero-visual reveal">
+          <svg viewBox="0 0 420 420" aria-hidden="true">
+            <defs>
+              <radialGradient id="coreGrad" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#00D4FF" stop-opacity="0.9"/>
+                <stop offset="60%" stop-color="#0099FF" stop-opacity="0.4"/>
+                <stop offset="100%" stop-color="#0099FF" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <circle class="orbit-ring" cx="210" cy="210" r="60"/>
+            <circle class="orbit-ring" cx="210" cy="210" r="110"/>
+            <circle class="orbit-ring accent" cx="210" cy="210" r="160"/>
+            <circle class="orbit-ring" cx="210" cy="210" r="200"/>
+            <circle class="orbit-ring accent-2" cx="210" cy="210" r="195"/>
+            <circle class="orbit-core" cx="210" cy="210" r="50"/>
+            <circle class="orbit-node" cx="210" cy="110" r="5"/>
+            <circle class="orbit-node violet" cx="370" cy="210" r="4"/>
+            <circle class="orbit-node amber" cx="140" cy="320" r="4"/>
+            <circle class="orbit-node" cx="110" cy="170" r="3"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Tier System</span>
+        <h2>Three tiers. Defined capacity.</h2>
+        <p class="lead">Each tier represents structural capacity — not a feature checklist. Selection is determined by fit, not preference.</p>
+      </div>
+      <div class="tier-grid reveal-stagger">
+        <article class="tier-card">
+          <div class="tier-name">// Tier 01</div>
+          <h3>Starter</h3>
+          <p class="tier-desc">Foundational structure. Compact site, primary service definition, contact and qualification flow.</p>
+          <div class="tier-meta">
+            <div class="row"><span>Capacity</span><span>Foundational</span></div>
+            <div class="row"><span>Suited to</span><span>First structured presence</span></div>
+            <div class="row"><span>Scope</span><span>Fixed</span></div>
+          </div>
+        </article>
+        <article class="tier-card card-featured">
+          <div class="tier-name">// Tier 02</div>
+          <h3>Pro</h3>
+          <p class="tier-desc">Expanded structure. Service page system, content hierarchy, brand application, social structure.</p>
+          <div class="tier-meta">
+            <div class="row"><span>Capacity</span><span>Expanded</span></div>
+            <div class="row"><span>Suited to</span><span>Active acquisition</span></div>
+            <div class="row"><span>Scope</span><span>Fixed</span></div>
+          </div>
+        </article>
+        <article class="tier-card">
+          <div class="tier-name">// Tier 03</div>
+          <h3>Growth</h3>
+          <p class="tier-desc">Full infrastructure. Ecommerce or advanced functionality, multi-section architecture, integrated brand application.</p>
+          <div class="tier-meta">
+            <div class="row"><span>Capacity</span><span>Full infrastructure</span></div>
+            <div class="row"><span>Suited to</span><span>Scaling operations</span></div>
+            <div class="row"><span>Scope</span><span>Fixed</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">How It Works</span>
+        <h2>A governed delivery process.</h2>
+        <p class="lead">Five steps. Each one documented. No open-ended phases, no scope drift.</p>
+      </div>
+      <div class="reveal-stagger">
+        <div class="process-step">
+          <div class="step-num">01 /</div>
+          <div><h3>Tier Fit Audit</h3><p>Free, structured intake. We assess service structure, scale, and operational fit.</p></div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">02 /</div>
+          <div><h3>Tier Recommendation</h3><p>A defined tier is matched to your structure. Scope is documented in writing.</p></div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">03 /</div>
+          <div><h3>Scope Review</h3><p>Timeline, price, and deliverables are confirmed before any work begins.</p></div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">04 /</div>
+          <div><h3>Signed Scope</h3><p>Engagement is formalised. The scope document governs the entire build.</p></div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">05 /</div>
+          <div><h3>Milestone Delivery</h3><p>Build proceeds through defined milestones. Each handoff is reviewed and approved.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Categories</span>
+        <h2>Defined in. Defined out.</h2>
+        <p class="lead">What Orbitra builds is structured. What Orbitra does not build is structured too.</p>
+      </div>
+      <div class="cat-grid reveal-stagger">
+        <div class="card-glass">
+          <h4 style="margin-bottom:24px;color:var(--primary)">In Scope</h4>
+          <ul class="cat-list">
+            <li><div class="mark">A</div><div><span class="label-name">Brand Foundation Layer</span><span class="label-desc">Logo system, visual rules, typography and colour structure.</span></div></li>
+            <li><div class="mark">B</div><div><span class="label-name">Website Architecture</span><span class="label-desc">The core deliverable, sized by tier.</span></div></li>
+            <li><div class="mark">C</div><div><span class="label-name">Brand Application</span><span class="label-desc">Signage, social media templates, applied collateral.</span></div></li>
+            <li><div class="mark">D</div><div><span class="label-name">Ecommerce Layer</span><span class="label-desc">Available at Growth tier only.</span></div></li>
+          </ul>
+        </div>
+        <div class="card-glass">
+          <h4 style="margin-bottom:24px;color:var(--muted)">Out of Scope</h4>
+          <ul class="cat-list excluded">
+            <li><div class="mark">—</div><div><span class="label-name">Open-ended creative engagements</span><span class="label-desc">No undefined or exploratory work.</span></div></li>
+            <li><div class="mark">—</div><div><span class="label-name">Hourly retainers</span><span class="label-desc">Scope, not time, governs delivery.</span></div></li>
+            <li><div class="mark">—</div><div><span class="label-name">Negotiated pricing</span><span class="label-desc">Tier price is fixed and published.</span></div></li>
+            <li><div class="mark">—</div><div><span class="label-name">Experimental brand work</span><span class="label-desc">For businesses without defined services.</span></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container reveal">
+      <div class="cta-panel">
+        <div class="mesh-bg"></div>
+        <div style="position:relative;z-index:2">
+          <span class="eyebrow" style="margin-bottom:20px">Tier Fit Audit</span>
+          <h2>Find your tier. Begin the scope.</h2>
+          <p class="lead mx-auto">A free, structured intake. Defined output: tier recommendation, scope document, timeline.</p>
+          <a href="https://calendly.com/edarling85/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start the Tier Fit Audit <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <a href="/" class="nav-logo"><span class="dot"></span>Orbitra</a>
+        <p>Structured website systems for service businesses.</p>
+      </div>
+      <div class="footer-col">
+        <h5>System</h5>
+        <ul>
+          <li><a href="/tiers.html">Tier System</a></li>
+          <li><a href="/process.html">Process</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="https://calendly.com/edarling85/" target="_blank" rel="noopener noreferrer">Start Audit</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="https://calendly.com/edarling85/" target="_blank" rel="noopener noreferrer">Book intake</a></li>
+          <li><a href="mailto:hello@orbitra.mu">hello@orbitra.mu</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Orbitra. All rights reserved.</span>
+      <span>orbitra.mu</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/main.js" defer></script>
+</body>
+</html>
