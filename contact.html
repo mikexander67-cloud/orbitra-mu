@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Orbitra</title>
+<meta name="description" content="Secondary, qualified entry point for visitors not yet ready for the Tier Fit Audit.">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.contact-hero{padding-top:160px;padding-bottom:80px;position:relative;overflow:hidden}
+.contact-hero h1{max-width:14ch;margin-top:24px;margin-bottom:24px}
+.contact-hero p.lead{max-width:48ch}
+.contact-layout{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start}
+@media (max-width:880px){.contact-layout{grid-template-columns:1fr;gap:32px}}
+.contact-form-panel{padding:40px}
+.contact-form-panel h2{font-size:clamp(1.5rem,2.4vw,2rem);margin-bottom:8px}
+.contact-form-panel .form-intro{color:var(--muted);font-size:15px;margin-bottom:28px}
+.contact-info-stack{display:flex;flex-direction:column;gap:16px}
+.info-card{padding:28px;display:flex;flex-direction:column;gap:10px;position:relative}
+.info-card .info-label{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--primary);display:flex;align-items:center;gap:10px}
+.info-card .info-label svg{width:14px;height:14px}
+.info-card h3{font-size:1.05rem;letter-spacing:-0.01em}
+.info-card p{color:var(--muted);font-size:14px}
+.info-card .info-value{font-family:var(--font-mono);font-size:14px;color:var(--text-strong);margin-top:4px}
+.qualified-note{display:flex;gap:14px;padding:20px;border:1px solid var(--border);border-radius:var(--radius-md);background:rgba(0,212,255,0.03);margin-bottom:32px}
+.qualified-note svg{flex-shrink:0;width:18px;height:18px;color:var(--primary);margin-top:2px}
+.qualified-note p{font-size:13.5px;color:var(--text);line-height:1.55}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:560px){.form-row{grid-template-columns:1fr}}
+.submit-row{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:8px;flex-wrap:wrap}
+.submit-row .meta{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--muted)}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-inner">
+    <a href="/" class="nav-logo"><span class="dot"></span>Orbitra</a>
+    <nav class="nav-menu">
+      <a href="/">Home</a>
+      <a href="/tiers.html">Tier System</a>
+      <a href="/process.html">Process</a>
+      <a href="/about.html">About</a>
+      <a href="/faq.html">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="https://calendly.com/edarling85/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start Audit <span class="arrow">→</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="contact-hero">
+    <div class="mesh-bg"></div>
+    <div class="hero-cursor-glow"></div>
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow">Contact</span>
+        <h1><span class="word">Direct</span> <span class="word">channel.</span> <span class="word text-gradient">Qualified</span> <span class="word">entry.</span></h1>
+        <p class="lead">For prospects evaluating fit before booking the Tier Fit Audit. Operational questions, scope clarifications, and partnership inquiries — handled within one business day.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="contact-layout reveal">
+
+        <article class="card-featured contact-form-panel">
+          <h2>Send a message</h2>
+          <p class="form-intro">Short, structural questions are best. For full scoping, the Tier Fit Audit is the correct entry point.</p>
+
+          <div class="qualified-note">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            <p>Orbitra serves service businesses with defined revenue and clear service structure. Inquiries outside this scope are politely redirected.</p>
+          </div>
+
+          <form onsubmit="event.preventDefault(); this.querySelector('button[type=submit]').textContent='Message queued ✓';">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="name">Full name</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              <div class="form-field">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-field">
+                <label for="team">Team size</label>
+                <select id="team" name="team">
+                  <option>1–5</option>
+                  <option>6–15</option>
+                  <option>16–30</option>
+                  <option>30+</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="topic">Inquiry type</label>
+              <select id="topic" name="topic">
+                <option>Tier suitability question</option>
+                <option>Scope clarification</option>
+                <option>Timeline inquiry</option>
+                <option>Ecommerce layer (Growth)</option>
+                <option>Other operational question</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <div class="submit-row">
+              <span class="meta">Response within 1 business day</span>
+              <button type="submit" class="btn btn-primary">Send message <span class="arrow">→</span></button>
+            </div>
+          </form>
+        </article>
+
+        <aside class="contact-info-stack">
+          <div class="card info-card">
+            <span class="info-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Email
+            </span>
+            <h3>Direct correspondence</h3>
+            <p>For written inquiries that do not require a call.</p>
+            <span class="info-value">hello@orbitra.mu</span>
+          </div>
+
+          <div class="card info-card">
+            <span class="info-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Hours
+            </span>
+            <h3>Operating window</h3>
+            <p>Monday — Friday, 09:00 — 18:00 GMT+4. All messages logged and responded to in sequence.</p>
+          </div>
+
+          <div class="card info-card">
+            <span class="info-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Location
+            </span>
+            <h3>Mauritius</h3>
+            <p>Delivery is fully remote. Onsite engagements are not part of the tier system.</p>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Routing</span>
+        <h2>Choose the correct entry point.</h2>
+        <p class="lead">Most inquiries are faster to resolve through the structured intake. Use this map to find the right channel.</p>
+      </div>
+      <div class="grid grid-3 reveal-stagger">
+        <div class="card">
+          <h3>Ready to scope</h3>
+          <p class="text-muted mt-sm">You have a defined service and want tier recommendation, fixed scope, and timeline.</p>
+          <a href="https://calendly.com/edarling85/" target="_blank" rel="noopener noreferrer" class="link-anim mt-md" style="display:inline-block;margin-top:20px;color:var(--primary);font-family:var(--font-mono);font-size:13px;text-transform:uppercase;letter-spacing:0.14em;">Start Tier Fit Audit →</a>
+        </div>
+        <div class="card">
+          <h3>Evaluating tiers</h3>
+          <p class="text-muted mt-sm">You want to understand Starter, Pro, and Growth capacity before committing to intake.</p>
+          <a href="/tiers.html" class="link-anim mt-md" style="display:inline-block;margin-top:20px;color:var(--primary);font-family:var(--font-mono);font-size:13px;text-transform:uppercase;letter-spacing:0.14em;">See the Tier System →</a>
+        </div>
+        <div class="card">
+          <h3>Operational question</h3>
+          <p class="text-muted mt-sm">Short clarification on scope, exclusions, delivery, or fit. Use the form on this page.</p>
+          <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="link-anim mt-md" style="display:inline-block;margin-top:20px;color:var(--primary);font-family:var(--font-mono);font-size:13px;text-transform:uppercase;letter-spacing:0.14em;">Use contact form →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-panel reveal">
+        <div class="mesh-bg"></div>
+        <div style="position:relative;z-index:2">
+          <span class="eyebrow" style="margin-bottom:18px">Tier Fit Audit</span>
+          <h2>The fastest way to a fixed scope.</h2>
+          <p class="lead" style="max-width:52ch">A structured 30-minute intake that returns a tier recommendation, scope document, and timeline. Free. No negotiation. No ambiguity.</p>
+          <div class="hero-actions" style="justify-content:center">
+            <a href="https://calendly.com/edarling85/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start the Tier Fit Audit <span class="arrow">→</span></a>
+            <a href="/tiers.html" class="btn btn-secondary">See the Tier System</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <a href="/" class="nav-logo"><span class="dot"></span>Orbitra</a>
+        <p>Structured website systems for service businesses. Scope governance, not custom projects.</p>
+      </div>
+      <div class="footer-col">
+        <h5>System</h5>
+        <ul>
+          <li><a href="/tiers.html">Tier System</a></li>
+          <li><a href="/process.html">Process</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Studio</h5>
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="https://calendly.com/edarling85/" target="_blank" rel="noopener noreferrer">Start Audit</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:hello@orbitra.mu">hello@orbitra.mu</a></li>
+          <li><a href="#">Mauritius — GMT+4</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Orbitra. All rights reserved.</span>
+      <span>orbitra.mu</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/main.js" defer></script>
+</body>
+</html>
