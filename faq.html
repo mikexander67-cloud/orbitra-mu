@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — Orbitra</title>
+<meta name="description" content="Address scope, pricing logic, tier rationale, exclusions, and out-of-scope handling.">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.faq-hero{position:relative;padding-top:160px;padding-bottom:80px;overflow:hidden}
+.faq-hero h1{max-width:18ch;margin:24px 0 24px}
+.faq-hero .lead{max-width:54ch}
+.faq-layout{display:grid;grid-template-columns:280px 1fr;gap:64px;align-items:start}
+@media (max-width:880px){.faq-layout{grid-template-columns:1fr;gap:32px}}
+.faq-nav{position:sticky;top:120px;display:flex;flex-direction:column;gap:6px}
+.faq-nav a{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:8px;font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);border:1px solid transparent;transition:all 200ms ease}
+.faq-nav a:hover{color:var(--text-strong);background:rgba(255,255,255,0.03);border-color:var(--border)}
+.faq-nav a .marker{width:6px;height:6px;border-radius:50%;background:var(--border-strong);transition:all 200ms ease}
+.faq-nav a:hover .marker{background:var(--primary);box-shadow:0 0 10px var(--primary)}
+.faq-group{margin-bottom:64px}
+.faq-group:last-child{margin-bottom:0}
+.faq-group-title{font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:0.18em;color:var(--primary);margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.faq-group-title::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--primary);box-shadow:0 0 10px var(--primary)}
+.faq-group h2{margin-bottom:24px;font-size:clamp(1.6rem,2.4vw,2rem)}
+.cta-panel .mesh{position:absolute;inset:0;z-index:-1;opacity:0.7}
+.contact-note{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
+@media (max-width:640px){.contact-note{grid-template-columns:1fr}}
+.note-card{padding:28px;border:1px solid var(--border);border-radius:12px;background:var(--surface)}
+.note-card h4{margin-bottom:8px;font-size:16px}
+.note-card p{font-size:14px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-inner">
+    <a href="/" class="nav-logo"><span class="dot"></span>Orbitra</a>
+    <nav class="nav-menu">
+      <a href="/">Home</a>
+      <a href="/tiers.html">Tier System</a>
+      <a href="/process.html">Process</a>
+      <a href="/about.html">About</a>
+      <a href="/faq.html">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="https://calendly.com/edarling85/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start Audit <span class="arrow">→</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="faq-hero">
+    <div class="mesh-bg"></div>
+    <div class="hero-cursor-glow"></div>
+    <div class="container">
+      <div class="reveal reveal-stagger">
+        <span class="eyebrow">Reference / FAQ</span>
+        <h1>Questions answered <em style="color:var(--primary);font-style:italic">structurally</em>.</h1>
+        <p class="lead">Scope logic, tier rationale, pricing structure, and what falls outside the system. Read before booking the audit.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:40px">
+    <div class="container">
+      <div class="faq-layout">
+        <aside class="faq-nav reveal">
+          <a href="#system"><span class="marker"></span>The System</a>
+          <a href="#scope"><span class="marker"></span>Scope & Pricing</a>
+          <a href="#tiers"><span class="marker"></span>Tier Logic</a>
+          <a href="#exclusions"><span class="marker"></span>Exclusions</a>
+          <a href="#delivery"><span class="marker"></span>Delivery</a>
+        </aside>
+
+        <div>
+          <div class="faq-group reveal" id="system">
+            <div class="faq-group-title">01 / The System</div>
+            <h2>How Orbitra works</h2>
+            <details class="faq-item" open>
+              <summary>Why tiers instead of custom projects?</summary>
+              <p class="answer">Tiers govern scope. Custom projects do not. A defined tier produces a predictable timeline, a predictable price, and a predictable result. Open-ended scope produces drift — in cost, in time, and in clarity.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Is this a template marketplace?</summary>
+              <p class="answer">No. Tiers define system capacity, not visual templates. Each build applies your service definition, brand inputs, and content architecture within a fixed structural envelope.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Are you an agency?</summary>
+              <p class="answer">No. Orbitra is a productized website infrastructure provider. We sit between agencies and DIY builders — selling scope governance, not hours.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Who is this built for?</summary>
+              <p class="answer">Service businesses with one to thirty employees, defined services, and existing revenue. Owner- or manager-led. Outcome-focused.</p>
+            </details>
+          </div>
+
+          <div class="faq-group reveal" id="scope">
+            <div class="faq-group-title">02 / Scope & Pricing</div>
+            <h2>How scope and price are set</h2>
+            <details class="faq-item">
+              <summary>How is pricing determined?</summary>
+              <p class="answer">Pricing is tied to tier capacity, not to hours. Each tier has a fixed price range disclosed during the scope review. There is no negotiation on rate — only on tier fit.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Can the scope be expanded mid-build?</summary>
+              <p class="answer">No. Scope is locked at signature. Additional structure is delivered as a follow-on engagement or a tier upgrade. This protects timeline and result quality.</p>
+            </details>
+            <details class="faq-item">
+              <summary>What is included in the fixed scope document?</summary>
+              <p class="answer">Recommended tier, deliverables, timeline, milestones, price, and exclusions. Signed before any work begins.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Is the Tier Fit Audit free?</summary>
+              <p class="answer">Yes. The audit is a structured intake. It produces a tier recommendation and a scope outline at no cost.</p>
+            </details>
+          </div>
+
+          <div class="faq-group reveal" id="tiers">
+            <div class="faq-group-title">03 / Tier Logic</div>
+            <h2>Choosing the right tier</h2>
+            <details class="faq-item">
+              <summary>How do I know which tier I need?
+</summary>
+              <p class="answer">The audit determines it. Tier fit is based on service complexity, content volume, acquisition activity, and operational scale — not preference.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Can I move between tiers later?</summary>
+              <p class="answer">Yes. Tier upgrades follow the same scope-governed process. Starter to Pro, or Pro to Growth, is delivered as a defined upgrade engagement.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Does Growth always include ecommerce?</summary>
+              <p class="answer">Ecommerce is available at Growth only. It is not automatically included — it is scoped if the business requires transactional functionality.</p>
+            </details>
+          </div>
+
+          <div class="faq-group reveal" id="exclusions">
+            <div class="faq-group-title">04 / Exclusions</div>
+            <h2>What sits outside the system</h2>
+            <details class="faq-item">
+              <summary>What does Orbitra not build?</summary>
+              <p class="answer">No bespoke creative engagements. No experimental brand work. No personal brand or influencer sites. No undefined startup pitches. No open-ended retainers.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Do you offer ongoing creative services?</summary>
+              <p class="answer">No. Engagements are milestone-based and close on delivery. Maintenance and structural additions are scoped as separate, defined engagements.</p>
+            </details>
+            <details class="faq-item">
+              <summary>What if my request falls outside the tier system?</summary>
+              <p class="answer">We decline. Clarity protects both parties. If the structure does not fit, we say so during the audit.</p>
+            </details>
+          </div>
+
+          <div class="faq-group reveal" id="delivery">
+            <div class="faq-group-title">05 / Delivery</div>
+            <h2>Process and timelines</h2>
+            <details class="faq-item">
+              <summary>How long does a build take?</summary>
+              <p class="answer">Timeline is fixed at signature and scales with tier. Starter is the shortest. Growth is the longest. Specific durations are confirmed in the scope document.</p>
+            </details>
+            <details class="faq-item">
+              <summary>What do you need from me?</summary>
+              <p class="answer">A defined service offering, existing brand inputs if any, and content cooperation through structured milestones. The system depends on inputs arriving on schedule.</p>
+            </details>
+            <details class="faq-item">
+              <summary>How are revisions handled?</summary>
+              <p class="answer">Revisions occur at defined milestone checkpoints, governed by the signed scope. Open-ended revision cycles are not part of the model.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="reveal" style="text-align:center;max-width:640px;margin:0 auto">
+        <span class="eyebrow">Still uncertain</span>
+        <h3 style="margin-top:16px">Two ways forward.</h3>
+      </div>
+      <div class="contact-note reveal-stagger reveal">
+        <div class="note-card">
+          <h4>If your structure is defined</h4>
+          <p>Book the Tier Fit Audit. We confirm tier, scope, and timeline in a single session.</p>
+          <a href="https://calendly.com/edarling85/" target="_blank" rel="noopener noreferrer" class="link-anim" style="display:inline-block;margin-top:14px;color:var(--primary);font-size:14px">Start the audit →</a>
+        </div>
+        <div class="note-card">
+          <h4>If you want to see the system first</h4>
+          <p>Review the three tiers and the five-step delivery process before deciding.</p>
+          <a href="/tiers.html" class="link-anim" style="display:inline-block;margin-top:14px;color:var(--primary);font-size:14px">See the Tier System →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-panel reveal">
+        <div class="mesh-bg mesh"></div>
+        <span class="eyebrow">Tier Fit Audit</span>
+        <h2 style="margin-top:18px" class="text-gradient">Answers narrow scope. <br>The audit confirms it.</h2>
+        <p class="lead">A structured intake. A tier recommendation. A fixed scope document. No negotiation, no drift.</p>
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+          <a href="https://calendly.com/edarling85/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start the Tier Fit Audit <span class="arrow">→</span></a>
+          <a href="/tiers.html" class="btn btn-secondary">See the Tier System</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <a href="/" class="nav-logo"><span class="dot"></span>Orbitra</a>
+        <p>Structured website systems for service businesses. Scope governance, not custom projects.</p>
+      </div>
+      <div class="footer-col">
+        <h5>System</h5>
+        <ul>
+          <li><a href="/tiers.html">Tier System</a></li>
+          <li><a href="/process.html">Process</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Studio</h5>
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="https://calendly.com/edarling85/" target="_blank" rel="noopener noreferrer">Start Audit</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="https://calendly.com/edarling85/" target="_blank" rel="noopener noreferrer">Book intake</a></li>
+          <li><a href="mailto:hello@orbitra.mu">hello@orbitra.mu</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© Orbitra. All rights reserved.</span>
+      <span>orbitra.mu</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/main.js" defer></script>
+</body>
+</html>
