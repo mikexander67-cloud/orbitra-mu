@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How It Works — 5-Step Delivery | Orbitra</title>
+<meta name="description" content="Establish predictability and scope discipline through the structured five-step delivery process.">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.process-hero{position:relative;padding-top:160px;padding-bottom:80px;overflow:hidden}
+.process-hero .eyebrow{margin-bottom:20px}
+.process-hero h1 .word{display:inline-block;opacity:0;transform:translateY(40px);animation:wordIn 800ms var(--ease-out-expo) forwards}
+.process-hero .lead{margin-top:24px;max-width:60ch}
+.timeline{position:relative;margin-top:48px}
+.timeline::before{content:'';position:absolute;left:39px;top:24px;bottom:24px;width:1px;background:linear-gradient(to bottom, transparent, rgba(0,212,255,0.4) 12%, rgba(183,148,244,0.3) 88%, transparent);}
+@media (max-width:640px){.timeline::before{left:14px}}
+.step{position:relative;display:grid;grid-template-columns:80px 1fr;gap:32px;padding:36px 0;border-bottom:1px solid var(--border);transition:background var(--duration-base) ease}
+.step:last-child{border-bottom:none}
+.step:hover{background:rgba(255,255,255,0.015)}
+.step:hover .step-marker{box-shadow:0 0 0 6px rgba(0,212,255,0.08), 0 0 24px rgba(0,212,255,0.4);border-color:var(--primary)}
+.step-marker{width:48px;height:48px;border-radius:50%;background:var(--surface);border:1px solid var(--border-strong);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:13px;color:var(--primary);font-weight:500;letter-spacing:0.05em;position:relative;z-index:2;transition:all var(--duration-base) var(--ease-out-cubic);flex-shrink:0;margin-left:16px}
+.step-content h3{margin-bottom:10px}
+.step-meta{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--muted);margin-bottom:14px;padding:6px 10px;border:1px solid var(--border);border-radius:6px;background:rgba(255,255,255,0.02)}
+.step-meta .pulse{width:6px;height:6px;border-radius:50%;background:var(--primary);box-shadow:0 0 8px var(--primary);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:0.5}50%{opacity:1}}
+.step-detail{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+.step-detail span{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);padding:5px 10px;border:1px solid var(--border);border-radius:4px}
+@media (max-width:640px){.step{grid-template-columns:48px 1fr;gap:16px;padding:28px 0}.step-marker{margin-left:0;width:30px;height:30px;font-size:11px}}
+.principle{padding:32px;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--surface);transition:all var(--duration-base) var(--ease-out-cubic);position:relative;overflow:hidden}
+.principle:hover{border-color:rgba(0,212,255,0.3);transform:translateY(-3px)}
+.principle-icon{width:40px;height:40px;border-radius:8px;background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.2);display:flex;align-items:center;justify-content:center;color:var(--primary);margin-bottom:20px}
+.principle h3{font-size:1.125rem;margin-bottom:10px}
+.principle p{font-size:14.5px;color:var(--muted)}
+.contrast-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+@media (max-width:760px){.contrast-grid{grid-template-columns:1fr}}
+.contrast-col{padding:32px;border-radius:var(--radius-md);border:1px solid var(--border)}
+.contrast-col.bad{background:rgba(255,255,255,0.015)}
+.contrast-col.good{background:linear-gradient(135deg, rgba(0,212,255,0.04), rgba(183,148,244,0.03));border-color:rgba(0,212,255,0.15)}
+.contrast-col h4{font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:0.18em;margin-bottom:20px;font-weight:500}
+.contrast-col.bad h4{color:var(--muted)}
+.contrast-col.good h4{color:var(--primary)}
+.contrast-col ul{list-style:none;display:flex;flex-direction:column;gap:14px}
+.contrast-col li{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.55}
+.contrast-col li svg{flex-shrink:0;margin-top:3px}
+.contrast-col.bad li{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-inner">
+    <a href="/" class="nav-logo"><span class="dot"></span>Orbitra</a>
+    <nav class="nav-menu">
+      <a href="/">Home</a>
+      <a href="/tiers.html">Tier System</a>
+      <a href="/process.html">Process</a>
+      <a href="/about.html">About</a>
+      <a href="/faq.html">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="https://calendly.com/edarling85/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start Audit <span class="arrow">→</span></a>
+      <button class="nav-toggle" aria-label="Open menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero process-hero">
+    <div class="mesh-bg"></div>
+    <div class="hero-cursor-glow"></div>
+    <div class="container hero-content">
+      <span class="eyebrow reveal">Delivery Process</span>
+      <h1><span class="word">Five</span> <span class="word">steps.</span> <span class="word text-gradient">Fixed</span> <span class="word text-gradient">scope.</span></h1>
+      <p class="lead reveal">Every engagement runs through the same defined sequence. Scope is locked before work begins. Timelines are governed by tier. No open-ended phases.</p>
+      <div class="hero-actions reveal">
+        <a href="https://calendly.com/edarling85/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start the Tier Fit Audit <span class="arrow">→</span></a>
+        <a href="/tiers.html" class="btn btn-secondary">See the Tier System</a>
+      </div>
+
+      <div class="stats-row reveal-stagger">
+        <div class="stat"><div class="num" data-count="5">0</div><div class="label">Defined Steps</div></div>
+        <div class="stat"><div class="num" data-count="0">0</div><div class="label">Open-Ended Phases</div></div>
+        <div class="stat"><div class="num" data-count="100" data-suffix="%">0</div><div class="label">Fixed Scope</div></div>
+        <div class="stat"><div class="num" data-count="1">0</div><div class="label">Signed Document</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">The Sequence</span>
+        <h2 class="mt-sm">From intake to delivery.</h2>
+        <p class="lead">Each step has a defined input, a defined output, and a defined exit. Nothing advances until the prior step is closed.</p>
+      </div>
+
+      <div class="timeline reveal-stagger">
+
+        <article class="step">
+          <div class="step-marker">01</div>
+          <div class="step-content">
+            <div class="step-meta"><span class="pulse"></span>Free · Structured Intake</div>
+            <h3>Tier Fit Audit</h3>
+            <p>You complete a structured intake covering your services, audience, and operational stage. We review against the tier capacity model.</p>
+            <div class="step-detail">
+              <span>Input: Intake form</span>
+              <span>Output: Audit summary</span>
+              <span>Duration: 48 hours</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="step">
+          <div class="step-marker">02</div>
+          <div class="step-content">
+            <div class="step-meta"><span class="pulse"></span>Recommendation · Fixed Scope</div>
+            <h3>Tier Recommendation</h3>
+            <p>We return a tier recommendation — Starter, Pro, or Growth — with a fixed scope document. Deliverables, sections, and category coverage are itemised.</p>
+            <div class="step-detail">
+              <span>Input: Audit summary</span>
+              <span>Output: Scope document</span>
+              <span>Format: Written</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="step">
+          <div class="step-marker">03</div>
+          <div class="step-content">
+            <div class="step-meta"><span class="pulse"></span>Review · Alignment</div>
+            <h3>Scope Review</h3>
+            <p>We walk through timeline, price, and deliverables together. Adjustments happen here — before signature, not after. This is the last point at which scope is fluid.</p>
+            <div class="step-detail">
+              <span>Input: Scope document</span>
+              <span>Output: Reviewed scope</span>
+              <span>Mode: Call or async</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="step">
+          <div class="step-marker">04</div>
+          <div class="step-content">
+            <div class="step-meta"><span class="pulse"></span>Signed · Locked</div>
+            <h3>Signed Scope</h3>
+            <p>The scope document is signed. Tier, deliverables, timeline, and price are locked. Out-of-scope requests are routed to a separate tier upgrade or addendum process.</p>
+            <div class="step-detail">
+              <span>Input: Reviewed scope</span>
+              <span>Output: Signed agreement</span>
+              <span>Status: Locked</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="step">
+          <div class="step-marker">05</div>
+          <div class="step-content">
+            <div class="step-meta"><span class="pulse"></span>Milestone-Based · Predictable</div>
+            <h3>Milestone Delivery</h3>
+            <p>Work proceeds through defined milestones tied to the signed scope. Each milestone has a deliverable and a review checkpoint. No phase runs open-ended.</p>
+            <div class="step-detail">
+              <span>Input: Signed scope</span>
+              <span>Output: Live system</span>
+              <span>Cadence: Milestone gated</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Operating Principles</span>
+        <h2 class="mt-sm">What governs the process.</h2>
+        <p class="lead">Four principles structure every engagement. They are not preferences — they are the system.</p>
+      </div>
+
+      <div class="grid grid-4 reveal-stagger">
+        <div class="principle">
+          <div class="principle-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <h3>Scope before work</h3>
+          <p>No build begins until scope is signed. Discovery and definition are separated from delivery.</p>
+        </div>
+        <div class="principle">
+          <div class="principle-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </div>
+          <h3>Fixed timelines</h3>
+          <p>Each tier carries a defined delivery window. Milestones are gated, not estimated.</p>
+        </div>
+        <div class="principle">
+          <div class="principle-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+          </div>
+          <h3>Defined inputs</h3>
+          <p>Each step requires a specific input. Ambiguity is resolved upstream, never carried forward.</p>
+        </div>
+        <div class="principle">
+          <div class="principle-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="4"/></svg>
+          </div>
+          <h3>Routed exceptions</h3>
+          <p>Out-of-scope requests route to a tier upgrade or addendum — not silent expansion.</p>
+        </div>
+      </div>
+
+      <div class="contrast-grid reveal">
+        <div class="contrast-col bad">
+          <h4>Conventional Custom Project</h4>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8A8A99" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>Open-ended discovery phase</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8A8A99" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>Scope expands during build</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8A8A99" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>Timeline estimated, not gated</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8A8A99" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>Pricing negotiated mid-project</li>
+          </ul>
+        </div>
+        <div class="contrast-col good">
+          <h4>Orbitra Process</h4>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00D4FF" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg>Structured audit with defined output</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00D4FF" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg>Scope locked before signature</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00D4FF" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg>Milestone-gated delivery</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00D4FF" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg>Tier-based fixed pricing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="cta-panel reveal">
+        <div class="mesh-bg"></div>
+        <div style="position:relative;z-index:2">
+          <span class="eyebrow" style="margin-bottom:20px">Step 01 · Start Here</span>
+          <h2 class="mt-sm">Begin with the <em style="font-style:italic;color:var(--primary);font-weight:400">Tier Fit Audit</em>.</h2>
+          <p class="lead mx-auto" style="margin-top:18px">A structured intake. A written tier recommendation. No commitment to proceed. The first step is free and defined.</p>
+          <div class="hero-actions" style="justify-content:center;margin-top:32px">
+            <a href="https://calendly.com/edarling85/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start the Tier Fit Audit <span class="arrow">→</span></a>
+            <a href="/tiers.html" class="btn btn-secondary">See the Tier System</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <a href="/" class="nav-logo"><span class="dot"></span>Orbitra</a>
+        <p>Structured website systems for service businesses. Defined tiers. Governed scope.</p>
+      </div>
+      <div class="footer-col">
+        <h5>System</h5>
+        <ul>
+          <li><a href="/tiers.html">Tier System</a></li>
+          <li><a href="/process.html">Process</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="https://calendly.com/edarling85/" target="_blank" rel="noopener noreferrer">Start Audit</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="https://calendly.com/edarling85/" target="_blank" rel="noopener noreferrer">Book Intake</a></li>
+          <li><a href="mailto:hello@orbitra.mu">hello@orbitra.mu</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Orbitra. All rights reserved.</span>
+      <span>orbitra.mu</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/main.js" defer></script>
+</body>
+</html>
